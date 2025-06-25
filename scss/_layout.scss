@@ -1,0 +1,49 @@
+@use 'variables';
+
+.header {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__logo {
+    height: 30px;
+    object-fit: contain;
+  }
+}
+
+.location-bar {
+  width: 100%;
+  background-color: #eee;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: variables.$dark;
+  box-shadow:inset 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+  background: variables.$dark;
+  color: white;
+  padding: 1rem;
+
+  .logo {
+    font-family: 'Shrikhand', cursive;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 0.5rem 0;
+    }
+  }
+}

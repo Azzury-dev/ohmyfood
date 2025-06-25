@@ -1,0 +1,5 @@
+# Ne pas push les modules installés
+node_modules/
+
+# Ne pas push les fichiers de lock si tu veux les ignorer
+package-lock.json
