@@ -119,16 +119,35 @@ h1, h2, h3, h4, p {
 .restaurants .card .card-info h4 {
   margin-bottom: 0.5rem;
 }
-.restaurants .card i {
+.restaurants .card .heart {
   position: absolute;
   right: 1rem;
-  bottom: 2.5rem;
-  font-size: 1.5rem;
-  color: #000;
+  bottom: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
 }
-.restaurants .card i.liked {
-  color: #A15BDC;
-  color: linear-gradient(180deg, rgb(161, 91, 220) 0%, rgb(228, 112, 218) 100%);
+.restaurants .card .heart i {
+  position: absolute;
+  inset: 0;
+  font-size: 1.5rem;
+  transition: opacity 0.3s ease;
+}
+.restaurants .card .heart .empty {
+  color: rgb(16, 16, 16);
+}
+.restaurants .card .heart .full {
+  background: linear-gradient(to bottom, rgb(147, 86, 220), rgb(255, 121, 218));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+}
+.restaurants .card .heart:hover .full {
+  opacity: 1;
+}
+.restaurants .card .heart:hover .empty {
+  opacity: 0;
 }
 .restaurants .card.new::before {
   content: "Nouveau";
@@ -192,7 +211,6 @@ h1, h2, h3, h4, p {
   background: linear-gradient(to bottom, rgb(147, 86, 220), rgb(255, 121, 218));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
   transition: all 0.3s ease;
   color: rgb(16, 16, 16);
 }

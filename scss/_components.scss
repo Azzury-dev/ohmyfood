@@ -127,16 +127,43 @@
       }
     }
 
-    i {
+    .heart {
       position: absolute;
       right: 1rem;
-      bottom: 2.5rem;
-      font-size: 1.5rem;
-      color: #000;
+      bottom: 1.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      cursor: pointer;
 
-      &.liked {
-        color: #A15BDC;
-        color: linear-gradient(180deg, rgba(161, 91, 220, 1) 0%, rgba(228, 112, 218, 1) 100%);
+      i {
+        position: absolute;
+        inset: 0; // top:0; right:0; bottom:0; left:0;
+        font-size: 1.5rem;
+        transition: opacity 0.3s ease;
+      }
+
+      .empty {
+        color: rgba(16, 16, 16, 1); // coeur vide = gris/noir
+      }
+
+      .full {
+        background: linear-gradient(
+          to bottom,
+          rgba(147, 86, 220, 1),
+          rgba(255, 121, 218, 1)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent; // important pour voir le gradient
+        opacity: 0;         // caché par défaut
+      }
+
+      &:hover .full {
+        opacity: 1;
+      }
+
+      &:hover .empty {
+        opacity: 0;
       }
     }
 
@@ -206,7 +233,6 @@
           background: linear-gradient(to bottom, rgba(147,86,220,1), rgba(255,121,218,1));
           -webkit-background-clip: text;
           background-clip: text;
-          color: transparent;
           transition: all 0.3s ease;
           color: rgba(16, 16, 16, 1);
         }
