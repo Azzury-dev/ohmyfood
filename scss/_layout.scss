@@ -1,5 +1,7 @@
 @use 'variables';
 
+
+
 .header {
   width: 100%;
   background-color: white;
@@ -46,4 +48,156 @@ footer {
       margin: 0.5rem 0;
     }
   }
+}
+
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding: 4rem 0rem;
+    text-align: center;
+    
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .btn-primary {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  .how {
+    padding: 3rem 8rem;
+
+    h3 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      li {
+        display: flex;
+        flex: 1;
+        max-width: 300px;
+        position: relative;
+        justify-content: left;
+        gap: 2rem;
+
+        .step-number {
+          position: absolute;
+          
+        }
+
+        i {
+          position: relative;
+          left: 0.5rem;
+          font-size: 1.3rem;
+        }
+
+        p {
+          position: relative;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .restaurants {
+    padding: 3rem 8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    h3 {
+      grid-column: 1 / -1;
+      font-size: 1.6rem;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      margin: 0;
+      height: 100%;
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+
+      img {
+        height: 250px;
+      }
+
+      .card-info {
+        h4 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 2rem 8rem;
+    background: variables.$dark;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 6rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    .logo {
+      font-family: 'Shrikhand', cursive;
+      font-size: 1.6rem;
+      text-align: left;
+      flex-shrink: 0;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 2rem;
+
+      li {
+        margin: 0;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        i {
+          font-size: 1rem;
+        }
+
+        &:hover {
+          color: variables.$secondary-color;
+          cursor: pointer;
+          transition: color 0.2s ease;
+        }
+      }
+    }
+  }
+
 }

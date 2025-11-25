@@ -51,13 +51,16 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       gap: 1rem;
       font-weight: 500;
-        &:hover {
-            i {
-                color: #9356DC;
-                cursor: pointer;
-            }
+      transition: background-color 0.15s;
+
+      &:hover {
+        background-color: #dbbaff;
+        i {
+          color: #9356DC;
+          cursor: pointer;
         }
-        
+      }
+
       i {
         font-size: 1.1rem;
         color: #7E7E7E
@@ -89,6 +92,10 @@
 .restaurants {
   padding: 2rem;
   background: variables.$bg-light;
+
+  h3 {
+    margin-bottom: 1rem;
+  }
 
   .card-link {
     text-decoration: none;
@@ -122,15 +129,21 @@
     i {
       position: absolute;
       right: 1rem;
-      top: 1rem;
+      bottom: 2.5rem;
       font-size: 1.5rem;
+      color: #000;
+
+      &.liked {
+        color: #A15BDC;
+        color: linear-gradient(180deg, rgba(161, 91, 220, 1) 0%, rgba(228, 112, 218, 1) 100%);
+      }
     }
 
     &.new::before {
       content: "Nouveau";
       position: absolute;
       top: 1rem;
-      left: 1rem;
+      right: 1rem;
       background: #99E2D0;
       color: #1B6150;
       padding: 0.2rem 0.5rem;
@@ -213,10 +226,46 @@
         align-items: center;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s;
+        clip-path: inset(0 0 0 0 round 1rem);
 
         &:hover {
           transform: scale(1.01);
         }
+
+        .price {
+          font-weight: bold;
+          margin-left: 1rem;
+          transition: transform 0.3s ease;
+          position: relative;
+          z-index: 2;
+        }
+
+        .check-icon {
+          position: absolute;
+          top: 0;
+          right: -4rem;
+          width: 4rem;
+          height: 100%;
+          background-color: #99e2d0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: rgb(255, 255, 255);
+          font-size: 1.3rem;
+          border-radius: 0 1rem 1rem 0;
+          opacity: 1;
+          transition: all 0.3s ease;
+          z-index: 1;
+        }
+
+        &:hover .check-icon {
+          right: 0;
+        }
+
+        &:hover .price {
+          transform: translateX(-3.5rem);
+        }
+
         .item-info {
           flex: 1;
 

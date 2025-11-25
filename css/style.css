@@ -2,53 +2,11 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   background: white;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, p {
   margin: 0;
-}
-
-.header {
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.header__logo {
-  height: 30px;
-  object-fit: contain;
-}
-
-.location-bar {
-  width: 100%;
-  background-color: #eee;
-  text-align: center;
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  color: #353535;
-  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-  background: #353535;
-  color: white;
-  padding: 1rem;
-}
-footer .logo {
-  font-family: "Shrikhand", cursive;
-}
-footer ul {
-  list-style: none;
-  padding: 0;
-}
-footer ul li {
-  margin: 0.5rem 0;
 }
 
 .btn-primary {
@@ -99,6 +57,10 @@ footer ul li {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   gap: 1rem;
   font-weight: 500;
+  transition: background-color 0.15s;
+}
+.how .steps li:hover {
+  background-color: #dbbaff;
 }
 .how .steps li:hover i {
   color: #9356DC;
@@ -130,6 +92,9 @@ footer ul li {
   padding: 2rem;
   background: #F6F6F6;
 }
+.restaurants h3 {
+  margin-bottom: 1rem;
+}
 .restaurants .card-link {
   text-decoration: none;
   color: inherit;
@@ -157,14 +122,19 @@ footer ul li {
 .restaurants .card i {
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  bottom: 2.5rem;
   font-size: 1.5rem;
+  color: #000;
+}
+.restaurants .card i.liked {
+  color: #A15BDC;
+  color: linear-gradient(180deg, rgb(161, 91, 220) 0%, rgb(228, 112, 218) 100%);
 }
 .restaurants .card.new::before {
   content: "Nouveau";
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  right: 1rem;
   background: #99E2D0;
   color: #1B6150;
   padding: 0.2rem 0.5rem;
@@ -239,9 +209,40 @@ footer ul li {
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+  clip-path: inset(0 0 0 0 round 1rem);
 }
 .menu-page .menu-content .menu-section .menu-item:hover {
   transform: scale(1.01);
+}
+.menu-page .menu-content .menu-section .menu-item .price {
+  font-weight: bold;
+  margin-left: 1rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+.menu-page .menu-content .menu-section .menu-item .check-icon {
+  position: absolute;
+  top: 0;
+  right: -4rem;
+  width: 4rem;
+  height: 100%;
+  background-color: #99e2d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+  border-radius: 0 1rem 1rem 0;
+  opacity: 1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.menu-page .menu-content .menu-section .menu-item:hover .check-icon {
+  right: 0;
+}
+.menu-page .menu-content .menu-section .menu-item:hover .price {
+  transform: translateX(-3.5rem);
 }
 .menu-page .menu-content .menu-section .menu-item .item-info {
   flex: 1;
@@ -265,6 +266,173 @@ footer ul li {
 }
 .menu-page .menu-content .menu-order .btn-primary {
   font-size: 1rem;
+}
+
+.header {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header__logo {
+  height: 30px;
+  object-fit: contain;
+}
+
+.location-bar {
+  width: 100%;
+  background-color: #eee;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #353535;
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background: #353535;
+  color: white;
+  padding: 1rem;
+}
+footer .logo {
+  font-family: "Shrikhand", cursive;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer ul li {
+  margin: 0.5rem 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding: 4rem 0rem;
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .hero .btn-primary {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  .how {
+    padding: 3rem 8rem;
+  }
+  .how h3 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .how .steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .how .steps li {
+    display: flex;
+    flex: 1;
+    max-width: 300px;
+    position: relative;
+    justify-content: left;
+    gap: 2rem;
+  }
+  .how .steps li .step-number {
+    position: absolute;
+  }
+  .how .steps li i {
+    position: relative;
+    left: 0.5rem;
+    font-size: 1.3rem;
+  }
+  .how .steps li p {
+    position: relative;
+    font-size: 1rem;
+  }
+  .restaurants {
+    padding: 3rem 8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .restaurants h3 {
+    grid-column: 1/-1;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  .restaurants .card {
+    margin: 0;
+    height: 100%;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .restaurants .card img {
+    height: 250px;
+  }
+  .restaurants .card .card-info h4 {
+    font-size: 1.1rem;
+  }
+  .restaurants .card .card-info p {
+    font-size: 0.95rem;
+  }
+  footer {
+    padding: 2rem 8rem;
+    background: #353535;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 6rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  footer .logo {
+    font-family: "Shrikhand", cursive;
+    font-size: 1.6rem;
+    text-align: left;
+    flex-shrink: 0;
+  }
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 2rem;
+  }
+  footer ul li {
+    margin: 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  footer ul li i {
+    font-size: 1rem;
+  }
+  footer ul li:hover {
+    color: #FF79DA;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
