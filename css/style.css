@@ -61,6 +61,8 @@ p {
 }
 
 .btn-primary {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(-5deg, #9356DC, #FF79DA);
   color: white;
   padding: 0.8rem 1.5rem;
@@ -69,6 +71,22 @@ p {
   text-decoration: none;
   margin-top: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.btn-primary:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+.btn-primary:hover::after {
+  opacity: 1;
 }
 
 .hero {
