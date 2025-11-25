@@ -7,6 +7,59 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.6s;
+}
+
+.fade-delay-4 {
+  animation-delay: 0.8s;
+}
+
+.fade-delay-5 {
+  animation-delay: 1s;
+}
+
+.fade-delay-6 {
+  animation-delay: 1.2s;
+}
+
+.fade-delay-7 {
+  animation-delay: 1.4s;
+}
+
+.fade-delay-8 {
+  animation-delay: 1.6s;
 }
