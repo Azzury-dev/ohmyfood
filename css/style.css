@@ -212,7 +212,7 @@ h1, h2, h3, h4, p {
   clip-path: inset(0 0 0 0 round 1rem);
 }
 .menu-page .menu-content .menu-section .menu-item:hover {
-  transform: scale(1.01);
+  transform: scale(1);
 }
 .menu-page .menu-content .menu-section .menu-item .price {
   font-weight: bold;
@@ -242,7 +242,7 @@ h1, h2, h3, h4, p {
   right: 0;
 }
 .menu-page .menu-content .menu-section .menu-item:hover .price {
-  transform: translateX(-3.5rem);
+  transform: translateX(-4rem);
 }
 .menu-page .menu-content .menu-section .menu-item .item-info {
   flex: 1;
