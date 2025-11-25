@@ -178,14 +178,33 @@ h1, h2, h3, h4, p {
   font-family: "Shrikhand", cursive;
   font-size: 1.5rem;
 }
-.menu-page .menu-content .menu-title i {
-  font-size: 1.5rem;
-  color: #000;
-  transition: color 0.3s;
-}
-.menu-page .menu-content .menu-title i:hover {
-  color: #9356DC;
+.menu-page .menu-content .menu-title .heart {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
   cursor: pointer;
+}
+.menu-page .menu-content .menu-title .heart i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  background: linear-gradient(to bottom, rgb(147, 86, 220), rgb(255, 121, 218));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.3s ease;
+  color: rgb(16, 16, 16);
+}
+.menu-page .menu-content .menu-title .heart .full {
+  opacity: 0;
+}
+.menu-page .menu-content .menu-title .heart:hover .full {
+  color: transparent;
+  opacity: 1;
+}
+.menu-page .menu-content .menu-title .heart:hover .empty {
+  opacity: 0;
 }
 .menu-page .menu-content .menu-section {
   margin: 2rem 0;

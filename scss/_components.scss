@@ -55,6 +55,7 @@
 
       &:hover {
         background-color: #dbbaff;
+
         i {
           color: #9356DC;
           cursor: pointer;
@@ -191,14 +192,36 @@
       font-family: 'Shrikhand', cursive;
       font-size: 1.5rem;
 
-      i {
-        font-size: 1.5rem;
-        color: #000;
-        transition: color 0.3s;
+      .heart {
+        position: relative;
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
 
-        &:hover {
-          color: variables.$main-color;
-          cursor: pointer;
+        i {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 1.5rem;
+          background: linear-gradient(to bottom, rgba(147,86,220,1), rgba(255,121,218,1));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          transition: all 0.3s ease;
+          color: rgba(16, 16, 16, 1);
+        }
+
+        .full {
+          opacity: 0;
+        }
+
+        &:hover .full {
+          color: transparent;
+          opacity: 1;
+        }
+
+        &:hover .empty {
+          opacity: 0;
         }
       }
     }
