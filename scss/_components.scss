@@ -324,6 +324,11 @@
           opacity: 1;
           transition: all 0.3s ease;
           z-index: 1;
+
+          &:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+          }
         }
 
         &:hover .check-icon {

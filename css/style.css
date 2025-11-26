@@ -345,6 +345,10 @@ p {
   transition: all 0.3s ease;
   z-index: 1;
 }
+.menu-page .menu-content .menu-section .menu-item .check-icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
 .menu-page .menu-content .menu-section .menu-item:hover .check-icon {
   right: 0;
 }
