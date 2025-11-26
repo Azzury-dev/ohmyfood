@@ -73,20 +73,19 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       gap: 1rem;
       font-weight: 500;
-      transition: background-color 0.15s;
-
-      &:hover {
-        background-color: #dbbaff;
-
-        i {
-          color: #9356DC;
-          cursor: pointer;
-        }
-      }
-
+      transition: transform 0.15s ease;
       i {
         font-size: 1.1rem;
-        color: #7E7E7E
+        color: #7E7E7E;
+        transition: color 0.15s ease;
+      }
+
+      &:hover {
+        transform: scale(1.005);
+        cursor: pointer;
+        i {
+          color: #9356DC;
+        }
       }
 
       p {
